@@ -83,7 +83,7 @@ class ViewController: UIViewController {
    
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+         startstop.setTitle("再生", for: .normal)
                if self.timer != nil {
                    self.timer.invalidate()
                    self.timer = nil
