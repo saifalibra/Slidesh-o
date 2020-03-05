@@ -24,14 +24,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     @IBAction func next(_ sender: Any) {
         
-        if self.timer != nil {
-            self.timer.invalidate()
-            self.timer = nil
-        }
-        
         nextrule()
         
     }
+    @IBOutlet weak var nextButton: UIButton!
     
     var timer :Timer!
     
@@ -41,12 +37,16 @@ class ViewController: UIViewController {
         if self.timer  == nil {
             startstop.setTitle("停止", for: .normal)
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(startOrstop(_:)), userInfo: nil, repeats: true)
-        
+            nextButton.isEnabled = false
+            backButton.isEnabled = false
         }
         else {
             startstop.setTitle("再生", for: .normal)
                    self.timer.invalidate()
                    self.timer = nil
+            nextButton.isEnabled = true
+            backButton.isEnabled = true
+            
                }
     }
     
@@ -54,11 +54,8 @@ class ViewController: UIViewController {
             nextrule()
     }
     
+    @IBOutlet weak var backButton: UIButton!
     @IBAction func back(_ sender: Any) {
-        if self.timer != nil {
-            self.timer.invalidate()
-            self.timer = nil
-        }
         
         if img[number] == img.first {
                    number = 2
@@ -84,6 +81,8 @@ class ViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          startstop.setTitle("再生", for: .normal)
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
                if self.timer != nil {
                    self.timer.invalidate()
                    self.timer = nil
