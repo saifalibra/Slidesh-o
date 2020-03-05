@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     picture.image = img[number]
     }
     
-   
-   
+    
     @IBOutlet weak var picture: UIImageView!
     @IBAction func next(_ sender: Any) {
         
@@ -36,13 +35,16 @@ class ViewController: UIViewController {
     
     var timer :Timer!
     
-    
+    @IBOutlet weak var startstop: UIButton!
     @IBAction func start_stop(_ sender: Any) {
         
         if self.timer  == nil {
+            startstop.setTitle("停止", for: .normal)
         self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(startOrstop(_:)), userInfo: nil, repeats: true)
+        
         }
         else {
+            startstop.setTitle("再生", for: .normal)
                    self.timer.invalidate()
                    self.timer = nil
                }

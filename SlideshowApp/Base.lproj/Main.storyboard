@@ -33,8 +33,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHA-9L-XBe">
-                                <rect key="frame" x="174" y="670" width="66" height="30"/>
-                                <state key="normal" title="再生/停止"/>
+                                <rect key="frame" x="191.5" y="670" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="start_stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZG7-Xn-VbQ"/>
                                 </connections>
@@ -68,6 +68,7 @@
                     <navigationItem key="navigationItem" id="lrw-Z5-XqF"/>
                     <connections>
                         <outlet property="picture" destination="W9B-dn-Ba2" id="8Tg-T4-qpR"/>
+                        <outlet property="startstop" destination="zHA-9L-XBe" id="KRZ-QM-0MP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
